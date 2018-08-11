@@ -21,20 +21,31 @@ app.use(bodyParser.json());
 var reserved = [];
 var waitingList = [];
 
-app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "index.html"));
-  });
-  
-  app.get("/tables", function(req, res) {
-    res.sendFile(path.join(__dirname, "tables.html"));
-  });
-  
-  app.get("/reserve", function(req, res) {
-      res.sendFile(path.join(__dirname, "reserve.html"));
-    });
+/*function reservation(name, phoneNumber, email, id) {
+    this.name = name;
+    this.phoneNumber = phoneNumber;
+    this.email = email;
+    this.id = id;
+}
+
+reserved.push(newreservation);*/
+
+app.get("/", function (req, res) {
+    res.sendFile(path.join(__dirname, "/index.html"));
+});
+
+app.get("/tables", function (req, res) {
+    res.sendFile(path.join(__dirname, "/tables.html"));
+});
+
+app.get("/reserve", function (req, res) {
+    res.sendFile(path.join(__dirname, "/reserve.html"));
+});
 
 
-app.listen(PORT, function() {
-console.log("App listening on PORT " + PORT);
+
+
+app.listen(PORT, function () {
+    console.log("App listening on PORT " + PORT);
 });
 
